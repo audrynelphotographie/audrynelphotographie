@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audry Nel Photography | Your Photos</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+:root { --gold: #c5a044; --dark: #0a0a0a; --white: #ffffff; --soft-dark: #111; }
+body { margin:0; background-color: var(--dark); color: var(--white); font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+
+/* NAVIGATION */
+nav { display: flex; justify-content: space-between; align-items: center; padding: 10px 5%; background: rgba(0,0,0,0.95); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #222; }
+.logo { font-family: 'Playfair Display', serif; font-size:1.3rem; color: var(--gold); text-transform: uppercase; letter-spacing:2px; cursor:pointer; }
+.nav-right { display:flex; align-items:center; gap:12px; }
+.login-nav-btn { background: var(--white); color:black; padding:8px 15px; border-radius:4px; text-decoration:none; font-weight:bold; font-size:0.8rem; text-transform:uppercase; transition:0.3s; cursor:pointer; border:none; }
+
+/* SOCIAL ICONS */
+.nav-socials { display: flex; gap: 10px; margin-right: 10px; }
+.nav-socials a { color: var(--white); font-size: 1.1rem; transition: 0.3s; }
+.nav-socials a:hover { color: var(--gold); transform: translateY(-2px); }
+
+/* CONTACT BOX FOR LOGIN */
+.support-box { margin-top: 20px; padding-top: 15px; border-top: 1px solid #333; }
+.support-box p { font-size: 0.8rem; color: #888; margin-bottom: 10px; }
+.social-btns { display: flex; justify-content: center; gap: 15px; }
+.social-btns a { width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 1rem; transition: 0.3s; }
+.wa-btn { background: #25d366; }
+.fb-btn { background: #1877F2; }
+.ig-btn { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+.social-btns a:hover { transform: scale(1.1); opacity: 0.9; }
+
+/* SLIDESHOW & GRID */
+.slideshow-container { position: relative; max-width: 900px; margin: 40px auto; overflow: hidden; border-radius: 8px; height: 500px; border: 1px solid #222; }
+.slides { display: none; width: 100%; height: 100%; object-fit: cover; cursor: pointer; }
+.prev, .next { cursor:pointer; position:absolute; top:50%; width:auto; padding:16px; color:white; font-weight:bold; font-size:20px; transform: translateY(-50%); background: rgba(0,0,0,0.5); border:none; z-index:10; }
+.next { right:0; }
+.photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; padding: 20px 5%; max-width: 1200px; margin: 0 auto; }
+.photo-item { position: relative; text-align: center; }
+.grid-img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; cursor: pointer; border: 1px solid #333; }
+.dl-btn { display: block; background: var(--gold); color: black; text-decoration: none; font-size: 0.75rem; padding: 8px; margin-top: 8px; border-radius: 4px; font-weight: bold; }
+
+/* HERO & LOGIN */
+.hero { height:50vh; display:flex; flex-direction:column; justify-content:center; align-items:center; background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('logo.jpg'); background-size:cover; background-position:center; text-align:center; }
+.login-container { max-width:400px; margin:40px auto 80px; padding:40px; border:1px solid var(--gold); text-align:center; background: var(--soft-dark); border-radius:8px; }
+input { width:100%; padding:12px; margin:10px 0; background:#1a1a1a; border:1px solid #333; color:white; border-radius:4px; box-sizing: border-box; }
+.btn-gold { width:100%; padding:15px; background:var(--gold); border:none; font-weight:bold; cursor:pointer; border-radius:4px; color: black; text-decoration: none; display: inline-block; }
+
+/* LIGHTBOX */
+#lightbox { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:3000; justify-content:center; align-items:center; }
+#lightbox img { max-width:90%; max-height:85%; border:2px solid var(--gold); }
+
+.page-section { display:none; }
+.active { display:block; }
+footer { text-align:center; padding:40px; color:#555; font-size:0.8rem; border-top:1px solid #222; }
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo" onclick="location.reload()">Audry Nel</div>
+    <div class="nav-right">
+        <div class="nav-socials">
+            <a href="https://wa.me/25762652177" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/Audrynel257" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/audry_nel?igsh=MW1tYmRvZ3dzOHZlcw==" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <a href="#login-section" class="login-nav-btn" id="navLoginBtn">CLIENT LOGIN</a>
+        <select id="langSwitcher" style="background:none; color:var(--gold); border:1px solid var(--gold); padding:5px; border-radius:4px;">
+            <option value="en" selected>English</option>
+            <option value="rn">Kirundi</option>
+            <option value="fr">Français</option>
+            <option value="sw">Kiswahili</option>
+        </select>
+    </div>
+</nav>
+
+<div id="main-page" class="page-section active">
+    <header class="hero">
+        <h1 style="font-family:'Playfair Display'; font-size:3rem; margin:0;">AUDRY NEL</h1>
+        <p id="heroSub">STORYTELLING THROUGH A LENS</p>
+    </header>
+
+    <h2 style="text-align:center; margin-top:50px;" id="portfolioTitle">Your Photos</h2>
+    
+    <div class="slideshow-container">
+        <img class="slides public-s" src="ifoto1.jpg" onclick="openLightbox(this)">
+        <img class="slides public-s" src="ifoto2.jpg" onclick="openLightbox(this)">
+        <img class="slides public-s" src="ifoto3.jpg" onclick="openLightbox(this)">
+        <img class="slides public-s" src="ifoto4.jpg" onclick="openLightbox(this)">
+        <img class="slides public-s" src="ifoto5.jpg" onclick="openLightbox(this)">
+        <img class="slides public-s" src="ifoto6.jpg" onclick="openLightbox(this)">
+        <img class="slides public-s" src="ifoto7.jpg" onclick="openLightbox(this)">
+        <img class="slides public-s" src="ifoto8.jpg" onclick="openLightbox(this)">
+        <img class="slides public-s" src="ifoto9.jpg" onclick="openLightbox(this)">
+        <img class="slides public-s" src="ifoto10.jpg" onclick="openLightbox(this)">
+        <a class="prev" onclick="plusPublicSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusPublicSlides(1)">&#10095;</a>
+    </div>
+
+    <div id="login-section" class="login-container">
+        <h3 id="loginTitle">CLIENT ACCESS</h3>
+        <p id="loginDesc">Enter your code to access your photos</p>
+        <input type="text" id="clientId" placeholder="Username / ID">
+        <input type="password" id="password" placeholder="Password">
+        <button class="btn-gold" id="loginBtn" onclick="checkLogin()">LOGIN</button>
+
+        <div class="support-box">
+            <p id="supportText">Issues? Contact us:</p>
+            <div class="social-btns">
+                <a href="https://wa.me/25762652177" class="wa-btn" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/Audrynel257" class="fb-btn" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/audry_nel?igsh=MW1tYmRvZ3dzOHZlcw==" class="ig-btn" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="client-page" class="page-section">
+    <div id="client-content"></div>
+</div>
+
+<div id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img">
+</div>
+
+<footer>
+    <p>&copy; 2026 AUDRY NEL PHOTOGRAPHY. Gitega, Burundi</p>
+    <p>+257 62 652 177</p>
+</footer>
+
+<script>
+const translations = {
+    'en': { heroSub: "STORYTELLING THROUGH A LENS", portfolioTitle: "Your Photos", navLogin: "CLIENT LOGIN", loginTitle: "CLIENT ACCESS", loginDesc: "Enter your code to access your photos", loginBtn: "LOGIN", welcome: "Welcome", dlAll: "📥 DOWNLOAD ALL (ZIP)", otherPhotos: "GALLERY", logout: "LOGOUT", save: "SAVE", support: "Issues? Contact us:" },
+    'rn': { heroSub: "INKURU ICIYE MU MA FOTO", portfolioTitle: "Amafoto Yawe", navLogin: "KWINJIRA", loginTitle: "ABAKILIYA", loginDesc: "Shira mwo code yawe ushobore kuraba amafoto", loginBtn: "INJIRA", welcome: "Murakaza neza", dlAll: "📥 TELECHARGE ZOSE (ZIP)", otherPhotos: "GUKURIKIRA", logout: "SOHOKA", save: "BIKE", support: "Ingorane? Twandikire:" },
+    'fr': { heroSub: "L'HISTOIRE À TRAVERS L'OBJECTIF", portfolioTitle: "Vos Photos", navLogin: "CONNEXION", loginTitle: "ACCÈS CLIENT", loginDesc: "Entrez votre code pour accéder aux photos", loginBtn: "CONNEXION", welcome: "Bienvenue", dlAll: "📥 TÉLÉCHARGER TOUT (ZIP)", otherPhotos: "GALERIE", logout: "DÉCONNEXION", save: "ENREGISTRER", support: "Problèmes? Contactez-nous:" },
+    'sw': { heroSub: "SIMULIZI KUPITIA LENZI", portfolioTitle: "Picha Zako", navLogin: "INGIA", loginTitle: "WATEJA", loginDesc: "Weka msimbo wako ili kupata picha", loginBtn: "INGIA", welcome: "Karibu", dlAll: "📥 PAKUA ZOTE (ZIP)", otherPhotos: "PICHA ZAIDI", logout: "ONDOKA", save: "PAKUA", support: "Tatizo? Tuandikie:" }
+};
+
+const clientsDatabase = {
+    "Nick": {
+        password: "2026",
+        name: "Nick",
+        zipLink: "https://wetransfer.com/nick-photos", 
+        photos: [
+            "photo1.jpg","photo2.jpg","photo3.jpg","photo4.jpg","photo5.jpg","photo6.jpg","photo7.jpg","photo8.jpg","photo9.jpg","photo10.jpg",
+            "photo11.jpg","photo12.jpg","photo13.jpg","photo14.jpg","photo15.jpg","photo16.jpg","photo17.jpg","photo18.jpg","photo19.jpg","photo20.jpg"
+        ]
+    },
+    "Jean": {
+        password: "1234",
+        name: "Jean Paul",
+        zipLink: "https://wetransfer.com/jean-photos",
+        photos: ["jean1.jpg", "jean2.jpg", "jean3.jpg", "jean4.jpg", "jean5.jpg"]
+    },
+    "Audry": {
+        password: "1234",
+        name: "Audry Nel",
+        zipLink: "https://wetransfer.com/audry-photos",
+        photos: ["jean1.jpg", "jean2.jpg", "jean3.jpg"]
+    }
+};
+
+let currentLang = 'en';
+
+document.getElementById('langSwitcher').addEventListener('change', (e) => {
+    currentLang = e.target.value;
+    updateLanguage();
+});
+
+function updateLanguage() {
+    const t = translations[currentLang];
+    document.getElementById('heroSub').innerText = t.heroSub;
+    document.getElementById('portfolioTitle').innerText = t.portfolioTitle;
+    document.getElementById('navLoginBtn').innerText = t.navLogin;
+    document.getElementById('loginTitle').innerText = t.loginTitle;
+    document.getElementById('loginDesc').innerText = t.loginDesc;
+    document.getElementById('loginBtn').innerText = t.loginBtn;
+    document.getElementById('supportText').innerText = t.support;
+    
+    if(document.getElementById('client-page').classList.contains('active')) {
+        const id = document.getElementById('clientId').value;
+        renderClientGallery(clientsDatabase[id]);
+    }
+}
+
+function checkLogin(){
+    const id = document.getElementById('clientId').value;
+    const pass = document.getElementById('password').value;
+    if(clientsDatabase[id] && clientsDatabase[id].password === pass){
+        renderClientGallery(clientsDatabase[id]);
+        document.getElementById('main-page').classList.remove('active');
+        document.getElementById('client-page').classList.add('active');
+        window.scrollTo(0,0);
+    } else { alert("Error: Access Denied!"); }
+}
+
+function renderClientGallery(client){
+    const t = translations[currentLang];
+    let html = `
+        <h2 style="text-align:center; margin-top:30px; font-family:'Playfair Display'">${t.welcome}, ${client.name}</h2>
+        <center><a href="${client.zipLink}" target="_blank" class="btn-gold" style="width:auto; padding:15px 30px; margin-bottom:20px;">${t.dlAll}</a></center>
+        
+        <div class="slideshow-container">`;
+    
+    const slidePics = client.photos.slice(0, 10);
+    slidePics.forEach((img, i) => {
+        html += `<img class="slides client-s" src="${img}" onclick="openLightbox(this)" style="display:${i==0?'block':'none'}">`;
+    });
+    
+    html += `
+        <a class="prev" onclick="plusClientSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusClientSlides(1)">&#10095;</a>
+    </div>
+
+    <h3 style="text-align:center; color:var(--gold); margin-top:50px;">${t.otherPhotos}</h3>
+    <div class="photo-grid">`;
+
+    const gridPics = client.photos.slice(10); 
+    if(gridPics.length === 0 && client.photos.length > 0) {
+        client.photos.forEach(img => {
+            html += `
+                <div class="photo-item">
+                    <img src="${img}" class="grid-img" onclick="openLightbox(this)">
+                    <a href="${img}" download class="dl-btn"><i class="fas fa-download"></i> ${t.save}</a>
+                </div>`;
+        });
+    } else {
+        gridPics.forEach(img => {
+            html += `
+                <div class="photo-item">
+                    <img src="${img}" class="grid-img" onclick="openLightbox(this)">
+                    <a href="${img}" download class="dl-btn"><i class="fas fa-download"></i> ${t.save}</a>
+                </div>`;
+        });
+    }
+
+    html += `</div>
+        <center><button class="btn-gold" style="background:#333; color:white; margin:50px;" onclick="location.reload()">${t.logout}</button></center>`;
+    
+    document.getElementById('client-content').innerHTML = html;
+    cliIdx = 0;
+}
+
+// SLIDESHOW LOGIC
+let pubIdx = 0;
+function plusPublicSlides(n) { showSlides('public-s', pubIdx += n); }
+let cliIdx = 0;
+function plusClientSlides(n) { 
+    let s = document.getElementsByClassName('client-s');
+    if(s.length <= 1) return;
+    s[cliIdx].style.display = "none";
+    cliIdx = (cliIdx + n + s.length) % s.length;
+    s[cliIdx].style.display = "block";
+}
+function showSlides(cls, idx) {
+    let s = document.getElementsByClassName(cls);
+    if(s.length === 0) return;
+    for (let i = 0; i < s.length; i++) s[i].style.display = "none";
+    let realIdx = (idx + s.length) % s.length;
+    if(cls === 'public-s') pubIdx = realIdx;
+    s[realIdx].style.display = "block";
+}
+function openLightbox(img){
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox').style.display='flex';
+}
+setInterval(() => { plusPublicSlides(1); }, 4000);
+showSlides('public-s', 0);
+</script>
+</body>
+</html>
