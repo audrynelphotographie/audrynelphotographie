@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="rn">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta name="google-site-verification" content="google5bf656274ba30583" />
+    
+    <link rel="canonical" href="https://audrynel.com/" />
+    <meta name="robots" content="index, follow" />
+    
+    <meta name="description" content="Audry Nel, Audry Nel Photography, umufotozi Burundi, umufotozi Gitega,umufotographe,Photographer,+257,photo gitega,photographe Burundi, photographe Gitega, meilleur photographe Burundi, amafoto y'ubukwe Burundi, wedding photography Burundi, event photographer Gitega, portrait Burundi, photographie professionnelle Burundi, audrynelphotographie.">
+    <meta property="og:title" content="Audry Nel - Professional Photographer in Burundi">
+    <meta property="og:description" content="Professional photography services in Gitega, Burundi. Access your private gallery.">
+    <meta property="og:image" content="https://audrynel.com/audry-nel-photography-logo.jpg">
+    <meta property="og:url" content="https://audrynel.com/">
+    <meta property="og:type" content="website">
+
+    <meta name="apple-mobile-web-app-title" content="Audry Nel">
+    <meta name="application-name" content="Audry Nel">
+    <link rel="icon" href="icon.jpg" type="image/jpeg">
+     <link rel="apple-touch-icon" href="icon.jpg">
+
+    <link rel="icon" type="image/jpg" href="audry-nel-photography-logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+     <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Audry Nel",
+      "url": "https://audrynel.com/"
+    }
+    </script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <title>Audry Nel Photography</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <div class="logo-wrapper" onclick="location.reload()">
+    <div class="logo" id="mainLogo">Audry Nel</div>
+  </div>
+  <div class="nav-right">
+    <div class="nav-tabs">
+      <button class="nav-tab active" onclick="showPage('home')" id="tab-home"> Home</button>
+      <button class="nav-tab" onclick="showPage('tarif')" id="tab-tarif"> Tarif</button>
+      <button class="nav-tab" onclick="showPage('galerie')" id="tab-galerie">Payment</button>
+    </div>
+    <select id="langSwitcher" onchange="switchLanguage()">
+      <option value="en" selected>En 🇬🇧</option>
+      <option value="fr">Fra 🇫🇷</option>
+      <option value="rn">Kir🇧🇮</option>
+    </select>
+    <div class="nav-socials">
+      <a href="https://wa.me/25762652177" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.facebook.com/Audrynel257" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/audry_nel" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</nav>
+
+<!-- =====================================================
+     PAGE 1: HOME  (Login → Dashboard)
+     ===================================================== -->
+<div id="page-home" class="page-section active">
+
+  <!-- ── LOGIN VIEW ── -->
+  <div id="login-view">
+    <div class="login-accent"></div>
+    <div class="login-accent2"></div>
+
+    <div class="brand">
+      <div class="brand-name"><em>Audry Nel</em> Photographie</div>
+      <div class="brand-line"></div>
+      <div class="brand-sub">Espace client privé</div>
+    </div>
+
+    <div class="login-card">
+      <div class="login-logo-container">
+    <div class="login-logo-circle">
+        <img src="https://i.ibb.co/9HRHHgxQ/logo1.jpg" alt="Audry Nel ">
+    </div>
+</div>
+      <h2>Bienvenue</h2>
+      <p>Entrez votre code client pour accéder à vos photos</p>
+
+      <div class="field">
+        <label>Nom du client</label>
+        <input type="text" id="input-name" placeholder="Votre prénom & nom" autocomplete="off">
+      </div>
+      <div class="field">
+        <label>Code d'accès</label>
+        <input type="password" id="input-code" placeholder="••••••••" autocomplete="off">
+      </div>
+
+      <div class="t-error-msg" id="error-msg" style="display:none;"></div>
+
+      <button id="loginBtn" onclick="doLogin()" class="btn-t-login">
+    <span id="btnText">ACCÉDER À MES PHOTOS</span>
+    <div id="btnLoader" class="mini-loader" style="display:none;"></div>
+</button>
+
+
+      <div class="login-footer" style="margin-top:1.5rem;">Vos photos sont protégées &amp; privées</div>
+    </div>
+    
+
+    <!-- Status & Quick Access below login -->
+<footer class="glass-footer">
+    <div class="footer-gallery-title">PORTFOLIO CAPTURES</div>
+    
+    <div class="footer-photo-strip">
+        <div class="footer-photo-strip-inner">
+            <div class="footer-photo-item"><img src="https://i.ibb.co/DDrqWbCP/1.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/wF1sjKFM/14.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/rR1h345P/13.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/WWymrS9H/18.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/s9bKN2M0/2.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/bRqYBXcB/29.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/pvkBYNmK/wedding9.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/23cKKB5X/wedding7.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/nq8CWGbt/49.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/qF9mTB7L/33.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/0jKMyJkn/32.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/8DBqmhTP/23.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/yBFkTQdd/22.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/vxPbV3K4/anniv6.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/GvhTHnZB/anniv4.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/nM78BJFs/wedding1.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/vCPwh0fN/event1.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/DDrqWbCP/1.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/wF1sjKFM/14.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/rR1h345P/13.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/WWymrS9H/18.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/s9bKN2M0/2.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/bRqYBXcB/29.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/pvkBYNmK/wedding9.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/23cKKB5X/wedding7.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/nq8CWGbt/49.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/qF9mTB7L/33.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/0jKMyJkn/32.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/8DBqmhTP/23.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/yBFkTQdd/22.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/vxPbV3K4/anniv6.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/GvhTHnZB/anniv4.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/nM78BJFs/wedding1.jpg"></div>
+            <div class="footer-photo-item"><img src="https://i.ibb.co/vCPwh0fN/event1.jpg"></div>
+            
+        </div>
+    </div>
+</footer>
+     <div class="status-box">
+            <div class="status-dot" id="dotIndicator"></div>
+            <div id="statusLabel" class="status-label">Available</div>
+        </div>
+
+    <div class="quick-access" style="margin-top:1rem;">
+      <p class="qa-label">EXPLORE</p>
+      <div class="qa-grid">
+        <div class="qa-card" onclick="showPage('tarif')">
+          <div class="qa-icon">💰</div>
+          <div class="qa-title">Tarif & Plans</div>
+          <div class="qa-sub">Anniversaire · Mariage · Event</div>
+          <div class="qa-arrow">→</div>
+        </div>
+        <div class="qa-card" onclick="showPage('galerie')">
+          <div class="qa-icon">🖼</div>
+          <div class="qa-title">Payment Access</div>
+          <div class="qa-sub">Free · Starter · Pro Max</div>
+          <div class="qa-arrow">→</div>
+        </div>
+       <div class="qa-card" onclick="window.open('https://wa.me/25762652177', '_blank')">
+    <div class="glass-icon-wrapper">
+        <i class="fab fa-whatsapp whatsapp-icon"></i>
+    </div>
+    <h3>WhatsApp</h3>
+    <p>Twandikire </p>
+    <div class="qa-arrow">→</div>
+        </div>
+        </a>
+        <div class="qa-card" onclick="toggleCalendar()">
+          <div class="qa-icon">📅</div>
+          <div class="qa-title">Booking</div>
+          <div class="qa-sub">Raba amatariki aboneka</div>
+          <div class="qa-arrow">→</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="apk-bottom-container">
+      <a href="https://github.com/audrynel/audrynelphotographie/releases/download/V1/AudryNel.apk" download class="btn-apk-mid" onclick="startLoading(this)">
+        <i class="fab fa-android"></i> <span id="apkBtnHome">DOWNLOAD APP</span>
+      </a>
+    </div>
+  </div><!-- /login-view -->
+
+  <!-- ── DASHBOARD VIEW ── -->
+   <div id="dashboard-view">
+    <div class="dash-header">
+      <div class="dash-brand"><em>Audry Nel</em> Photographie</div>
+      <div class="dash-user">
+        <div class="dash-avatar" id="dash-avatar">AN</div>
+        <span class="dash-username" id="dash-username"></span>
+        <button class="btn-logout" onclick="doLogout()">Déconnexion</button>
+      </div>
+    </div>
+
+    <div class="dash-welcome">
+      <div id="status-badge-container"> </div>
+      <br> </br>
+      <div class="welcome-tag">Espace privé</div>
+      <div class="welcome-name">Welcome, <em id="welcome-first">Client</em></div>
+      <div class="client-code-badge" id="client-code-badge">Code : —</div>
+    </div>
+    
+
+<div class="dash-stats">
+  <div class="stat-box glass-home-btn" onclick="window.location.href='contact.html'">
+    <div class="stat-num home-icon-glow">
+        <i class="fas fa-home"></i>
+    </div>
+    <div class="stat-label">Fyonda Ha Utabonye Ifoto Yawe</div>
+  </div>
+
+  <div class="stat-box download-all-btn" onclick="downloadAll()">
+    <div class="stat-num gold-glow">↓</div>
+    <div class="stat-label">ALL</div>
+  </div>
+
+  <div class="stat-box selected-btn" id="stat-selected" onclick="downloadSelected()">
+    <div class="stat-num" id="selected-count">0</div>
+    <div class="stat-label">FILES</div>
+  </div>
+</div>
+
+    <div class="gallery-section">
+      <div class="section-header">
+        <div class="section-title">Votre galerie</div>
+        <div class="section-count" id="gallery-count">+100photos</div>
+      </div>
+      <div class="t-photo-grid" id="t-photo-grid"></div>
+    </div>
+  </div><!-- /dashboard-view -->
+
+</div><!-- /page-home -->
+
+
+<div id="page-tarif" class="page-section">
+  <div class="tarif-header">
+    <h1>📸 Photography Plans</h1>
+    <p>Bookinga Plan Ushaka • Tous les prix sont négociables</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="card" style="animation-delay:0.1s">
+      <div class="package-name">Plus D'infos</div>
+      <div class="price" style="font-size:20px;color:#888;">Twigane mbere<span>/ Pfonda aha</span></div>
+      <ul class="features"><li>Ushaka Photos / Video?</li><li>Ushaka Drone Etc.</li><li>Ibiganiro biruguruye</li></ul>
+      <button class="btn-card" onclick="openContactModal()">Twandikire</button>
+    </div>
+    <div class="card" style="animation-delay:0.2s">
+      <div class="package-name">Anniversaire</div>
+      <div class="price">100,000 FBU<span>/ Isaha 2</span></div>
+      <ul class="features"><li>Unlimited Photos</li><li>Photos Retouched</li><li>Online Gallery Access</li></ul>
+      <button class="btn-card" onclick="openContactModal()">Saba iyi service</button>
+    </div>
+    <div class="card featured" style="animation-delay:0.3s">
+      <div class="badge">Dot</div>
+      <div class="package-name">Dot Simple</div>
+      <div class="price">300,000 FBU<span>/ Umunsi</span></div>
+      <ul class="features"><li>Full Day Coverage</li><li>Unlimited Photos + Video</li><li>Online Gallery Access (1 week)</li></ul>
+      <button class="btn-card filled" onclick="openContactModal()">Saba ubu</button>
+    </div>
+    <div class="card featured" style="animation-delay:0.4s">
+      <div class="badge">Dot Pro</div>
+      <div class="package-name">Dot Pro</div>
+      <div class="price">400,000 FBU<span>/ Umunsi</span></div>
+      <ul class="features"><li>Unlimited Photos</li><li>Drone Shots Included</li><li>Video Highlight (3 min)</li><li>Online Gallery Access</li></ul>
+      <button class="btn-card filled" onclick="openContactModal()">Saba ubu</button>
+    </div>
+    <div class="card featured" style="animation-delay:0.5s">
+      <div class="badge">Simple</div>
+      <div class="package-name">Mariage Simple</div>
+      <div class="price">350,000 FBU<span>/ Umunsi</span></div>
+      <ul class="features"><li>Full Day Coverage</li><li>Unlimited Photos</li><li>Video Highlight (3 min)</li><li>Gallery for 1 week</li></ul>
+      <button class="btn-card filled" onclick="openContactModal()">Saba ubu</button>
+    </div>
+    <div class="card featured" style="animation-delay:0.6s">
+      <div class="badge">Pro</div>
+      <div class="package-name">Mariage Pro</div>
+      <div class="price">450,000 FBU<span>/ Umunsi</span></div>
+      <ul class="features"><li>Full Day Coverage</li><li>Drone Shots Included</li><li>Video Highlight (3 min)</li><li>Full Online Gallery</li></ul>
+      <button class="btn-card filled" onclick="openContactModal()">Saba ubu</button>
+    </div>
+    <div class="card featured" style="animation-delay:0.7s">
+      <div class="badge">Combo</div>
+      <div class="package-name">Dot & Mariage Simple</div>
+      <div class="price">500,000 FBU<span>/ Umunsi umwe</span></div>
+      <ul class="features"><li>Full Day Coverage</li><li>Unlimited Photos</li><li>Video Highlight</li><li>Online Gallery</li></ul>
+      <button class="btn-card filled" onclick="openContactModal()">Saba ubu</button>
+    </div>
+    <div class="card featured" style="animation-delay:0.8s">
+      <div class="badge">VIP</div>
+      <div class="package-name">Dot & Mariage PRO</div>
+      <div class="price">700,000 FBU<span>/ Umunsi umwe</span></div>
+      <ul class="features"><li>Drone Shots Included</li><li>Full Video Highlight</li><li>Unlimited Photos Retouched</li><li>Online Gallery Access</li></ul>
+      <button class="btn-card filled" onclick="openContactModal()">Saba ubu</button>
+    </div>
+    <div class="card" style="animation-delay:0.9s">
+      <div class="package-name">EVENT MAX</div>
+      <div class="price">1,500,000 FBU<span>/ Full Event</span></div>
+      <ul class="features"><li>High-End Photo Album</li><li>Live Streaming</li><li>Cinematic Video</li><li>Drone Shots Included</li><li>Full Video Highlight</li><li>Unlimited Photos Retouched</li><li>Online Gallery Access</li></ul>
+      <button class="btn-card" onclick="openContactModal()">Saba iyi service</button>
+    </div>
+  </div>
+
+  <div class="about-section">
+    <h2>About Audry Nel Photographie</h2>
+    <p>Murakaza neza! Ndi <strong>Audry Nel</strong>, Professional Photographer & Developer. Intego yanje ni uguha agaciro ibihe vyanyu vy'akarorero nkoresheje ubuhinga buhanitse.<br><br><strong>Imisanzu n'Ibiganiro:</strong> Amapaki yose mubona haruguru arashobora guhinduka (Negotiable). Twisunze uburyo bwanyu, turashobora kuganira tukagira <em>Diminution</em> ikwiye.</p>
+  </div>
+  <div style="padding: 20px 5%; text-align: center; margin-bottom: 20px;">
+    <button onclick="goBackToClientDash()" class="btn-back-dash">
+        <i class="fas fa-arrow-left"></i> Go Back
+    </button>
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="modal-overlay" id="contactModal">
+    <div class="modal-content">
+      <h2>Hitamwo uburyo Bwo Ku bokinga</h2>
+      <div class="contact-grid">
+        <a href="https://wa.me/25762652177" class="contact-item" target="_blank"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
+        <a href="tel:+25762652177" class="contact-item"><i class="fas fa-phone"></i><span>Numero</span></a>
+        <a href="https://www.facebook.com/Audrynel257" class="contact-item" target="_blank"><i class="fab fa-facebook"></i><span>Facebook</span></a>
+        <a href="mailto:audrymukamurakoze@gmail.com" class="contact-item"><i class="fas fa-envelope"></i><span>Gmail</span></a>
+      </div>
+      <div class="close-btn" onclick="closeContactModal()">✕ Funga Idirishya</div>
+    </div>
+  </div>
+</div><!-- /page-tarif -->
+
+<!-- =====================================================
+     PAGE 3: PAYMENT / GALERIE
+     ===================================================== -->
+<div id="page-galerie" class="page-section">
+  <div class="galerie-header">
+    <h1>🖼 Galeries Access</h1>
+    <p>Hitamwo plan ikwiye • Ishyura ukore screen • Urungike kuri WhatsApp</p>
+  </div>
+  <div class="pricing-container">
+    <div class="g-card" style="animation-delay:0.1s">
+      <h3>Free</h3>
+      <div class="g-price">0 Fbu <span class="g-duration">Indwi 1</span></div>
+      <ul class="g-features"><li>Basic Gallery</li><li>Amafoto 100</li><li>Unlimited Download</li></ul>
+      <a href="https://wa.me/25762652177?text=Muraho, nshaka gukoresha Free Plan." class="btn-g" target="_blank">Free Access</a>
+    </div>
+    <div class="g-card" style="animation-delay:0.2s">
+      <div class="badge">Starter</div>
+      <h3>Starter</h3>
+      <div class="g-price">10,000 Fbu <span class="g-duration">Ukwezi 1</span></div>
+      <ul class="g-features"><li>Unlimited Photos</li><li>HD Photo Download</li><li>Priority Support</li></ul>
+      <button class="btn-g" onclick="openPayModal('Starter','10,000 Fbu')">Gura Starter</button>
+    </div>
+    <div class="g-card" style="animation-delay:0.3s">
+      <div class="badge">Standard</div>
+      <h3>Standard</h3>
+      <div class="g-price">45,000 Fbu <span class="g-duration">Amezi 2</span></div>
+      <ul class="g-features"><li>Unlimited Photos</li><li>HD Photo Download</li><li>Priority Support</li></ul>
+      <button class="btn-g" onclick="openPayModal('Standard','45,000 Fbu')">Gura Standard</button>
+    </div>
+    <div class="g-card pro-plan" style="animation-delay:0.4s">
+      <div class="badge">BEST VALUE</div>
+      <h3>Pro Max</h3>
+      <div class="g-price">80,000 Fbu <span class="g-duration">Umwaka 1 (1 An)</span></div>
+      <ul class="g-features"><li>Unlimited Photos</li><li>HD Photo Download</li><li>Video Support</li></ul>
+      <button class="btn-g" onclick="openPayModal('Pro Max','80,000 Fbu')">Premium Access</button>
+    </div>
+  </div><!-- /pricing-container -->
+
+  <div style="padding: 20px 5%; text-align: center;">
+    <button onclick="goBackToClientDash()" class="btn-back-dash">
+        <i class="fas fa-chevron-left"></i> Go back
+    </button>
+  </div>
+
+  <!-- Pay Modal -->
+  <div class="pay-modal" id="payModal">
+    <div class="pay-modal-content">
+      <h2>💳 Payment via Lumicash</h2>
+      <p id="planName" style="font-weight:bold; margin-bottom:4px;"></p>
+      <p id="planPrice" style="color:var(--gold); margin-bottom:0;"></p>
+      <div class="payment-box">
+        <p>Numero: <strong>+257 62 652 177</strong></p>
+        <p>Nom: <strong>MUNEZERO NADINE</strong></p>
+      </div>
+      <p style="font-size:13px; color:#777;">Umaze kwishura, Rungika screenshot kuri WhatsApp kugira ngo ufungurirwe.</p>
+      <a href="https://wa.me/25762652177?text=Muraho, nishyuriye galerie. Ngiyi Screenshot yanjye." class="whatsapp-link" target="_blank">
+        <i class="fab fa-whatsapp"></i> SEND SCREENSHOT TO WHATSAPP
+      </a>
+      <div class="pay-close" onclick="closePayModal()">✕ Funga</div>
+    </div>
+  </div>
+</div><!-- /page-galerie -->
+
+<!-- ===== GLOBAL LIGHTBOX ===== -->
+<div id="lightbox" onclick="this.style.display='none'" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.92); z-index:3000; justify-content:center; align-items:center;">
+  <img id="lightbox-img" src="" alt="View" style="max-width:90%; max-height:85%; border:2px solid var(--accent);">
+</div>
+
+<!-- ===== CALENDAR OVERLAY ===== -->
+<div id="calendar-overlay">
+  <div class="cal-header">
+    <div style="font-family:'Playfair Display'; font-size:1.5rem; color:var(--gold); text-transform:uppercase;">Audry Nel</div>
+    <p style="color:#888; margin:5px 0 0; font-size:0.7rem; letter-spacing:2px;">CALENDAR / BOOKING</p>
+    <i class="fas fa-times close-cal" onclick="toggleCalendar()"></i>
+  </div>
+  <div class="cal-frame-container"><iframe id="googleCal" src=""></iframe></div>
+  <center style="padding:20px;">
+    <a href="https://wa.me/25762652177" class="btn-whatsapp-book" target="_blank"><i class="fab fa-whatsapp"></i> CONFIRM MY DATE</a>
+    <p style="margin-top:20px; color:#555; cursor:pointer;" onclick="toggleCalendar()">← Go Back</p>
+  </center>
+</div>
+
+<!-- Download progress bar -->
+<div id="dl-progress-wrap"><div id="dl-progress-bar"></div></div>
+
+<!-- ===== EXPIRED BLOCK MODAL ===== -->
+<div id="expired-block-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.88); z-index:9000; justify-content:center; align-items:center; padding:20px;">
+  <div class="exp-modal-box">
+    <div class="exp-modal-icon">🔒</div>
+    <div class="exp-modal-title">Votre abonnement est deja expire</div>
+    <div class="exp-modal-sub">
+      Amafoto yawe arahari ariko ntushobora kuyagaragaza canke kuyamanura.<br>
+      Ishyura kugira ngo ugire access yuzuye usubire kwakira amafoto yawe.
+    </div>
+    <a href="https://wa.me/25762652177?text=Muraho, nshaka gusubira ubwishyu bwanjye bwa galerie." class="exp-modal-wa" target="_blank">
+      <i class="fab fa-whatsapp"></i> Twandikire kuri WhatsApp
+    </a>
+    <button class="exp-modal-btn" onclick="closeExpiredModal(); showPage('galerie')">🛒 Raba Ibiciro</button>
+    <div class="exp-modal-close" onclick="closeExpiredModal()">✕ Funga</div>
+  </div>
+</div>
+
+<!-- ===== DOWNLOAD CONFIRM MODAL ===== -->
+<div id="dl-confirm-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:9001; justify-content:center; align-items:center; padding:20px;">
+  <div class="dlc-box">
+    <div class="dlc-preview-wrap">
+      <img id="dl-confirm-preview" src="" alt="preview" class="dlc-preview-img">
+    </div>
+    <div class="dlc-title">Download This is photos?</div>
+    <div class="dlc-name" id="dl-confirm-name"></div>
+    <div class="dlc-btns">
+      <button class="dlc-btn dlc-yes" onclick="confirmDownloadYes()">✅ Yes</button>
+      <button class="dlc-btn dlc-no"  onclick="confirmDownloadNo()">✕ No</button>
+    </div>
+  </div>
+</div>
+
+<!-- Circle loader -->
+<div class="circle-overlay" id="circle-loader-container">
+  <div class="circle-wrapper">
+    <svg viewBox="0 0 100 100" style="transform:rotate(-90deg); width:120px; height:120px;">
+      <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(196,150,90,0.1)" stroke-width="6"></circle>
+      <circle id="progress-circle" cx="50" cy="50" r="45" fill="none" stroke="#c4965a" stroke-width="6"
+              stroke-dasharray="283" stroke-dashoffset="283" stroke-linecap="round" style="transition:stroke-dashoffset 0.3s ease;"></circle>
+    </svg>
+    <div id="percent-text" style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:1.2rem; color:#f0ebe3;">0%</div>
+  </div>
+  <div id="loader-msg" style="margin-top:20px; text-transform:uppercase; letter-spacing:0.2em; color:#c4965a; font-size:0.8rem;">Préparation...</div>
+</div>
+
+<!-- Notification -->
+<div class="notification" id="notif">Action confirmée</div>
+
+<!-- T.html Modal -->
+<div class="t-modal-overlay" id="t-modal">
+  <div class="t-modal-box">
+    <button class="t-modal-close" onclick="closeModal()">&times;</button>
+    <img class="t-modal-img" id="t-modal-img" src="" alt="Photo">
+    <div class="t-modal-footer">
+      <div class="t-modal-title" id="t-modal-title">Photo</div>
+      <a class="t-modal-dl-btn" id="t-modal-dl-btn" href="#" download target="_blank" rel="noopener">↓ Télécharger</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 AUDRY NEL PHOTOGRAPHY — Gitega, Burundi</p>
+  <p style="margin-top:5px;"><i class="fas fa-phone"></i> +257 62 652 177</p>
+</footer>
+
+<!-- ===== CLIENTS DATABASE (from client.js inline) ===== -->
+<script src="client.js"></script>
+<script src="script.js"></script>
+ <script src="client.js"></script>
+</body>
+</html>

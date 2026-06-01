@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Contact Us | Audry Nel Photography</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --gold: #c4965a;
+            --dark-gold: #8e6d43;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(196, 150, 90, 0.2);
+            --glow: 0 0 25px rgba(196, 150, 90, 0.3);
+        }
+
+        body {
+            margin: 0;
+            color: white;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background: #0d0b0b;
+            /* Background inyerera (Animated Mesh) */
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(196, 150, 90, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(196, 150, 90, 0.05) 0px, transparent 50%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- LOADING SCREEN (2s) --- */
+        #contact-loader {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            animation: fadeOut 0.8s forwards;
+            animation-delay: 2s;
+        }
+
+        @keyframes fadeOut {
+            to { opacity: 0; visibility: hidden; }
+        }
+
+        .loader-icon {
+            font-size: 40px;
+            color: var(--gold);
+            filter: drop-shadow(var(--glow));
+            animation: bounce 0.6s infinite alternate;
+        }
+
+        @keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-15px); } }
+
+        header { 
+            padding: 40px 20px; 
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: var(--gold);
+            border: 1px solid var(--border);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+
+        .back-btn:hover { background: var(--gold); color: black; box-shadow: var(--glow); }
+
+        h1 { 
+            margin-top: 30px; 
+            letter-spacing: 5px; 
+            text-transform: uppercase; 
+            font-size: 1.5rem;
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* --- GLASS CARDS --- */
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(25px) saturate(160%);
+            -webkit-backdrop-filter: blur(25px) saturate(160%);
+            padding: 30px;
+            border-radius: 25px;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            transition: 0.4s ease;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .info-item i {
+            font-size: 1.2rem;
+            color: var(--gold);
+            width: 45px;
+            height: 45px;
+            background: rgba(196, 150, 90, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin-right: 15px;
+        }
+
+        .info-item h4 { margin: 0; color: #888; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; }
+        .info-item p { margin: 2px 0 0; color: #fff; font-weight: 600; font-size: 0.9rem; }
+
+        /* Social Icons Grid */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            border-radius: 15px;
+            background: rgba(255,255,255,0.02);
+            color: white;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s ease;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .social-link:active { transform: scale(0.95); }
+        .social-link i { margin-right: 8px; font-size: 1rem; }
+
+        /* --- FORM STYLING --- */
+        .contact-form h2 {
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .input-group { margin-bottom: 15px; }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(196, 150, 90, 0.1);
+            border-radius: 15px;
+            color: white;
+            box-sizing: border-box;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            border-color: var(--gold);
+            background: rgba(196, 150, 90, 0.05);
+            outline: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+            border: none;
+            border-radius: 15px;
+            color: black;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover { box-shadow: var(--glow); transform: translateY(-2px); }
+
+        footer { text-align: center; padding: 40px 20px; opacity: 0.3; font-size: 0.65rem; letter-spacing: 1px; }
+        /* --- CUSTOM GLASS MODAL --- */
+.glass-modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    display: none; /* Inyegeje kugeza igihe ikenewe */
+    align-items: center;
+    justify-content: center;
+    z-index: 20000;
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(196, 150, 90, 0.3);
+    padding: 30px;
+    border-radius: 25px;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    animation: modalPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modalPop {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.gold-icon {
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 10px rgba(196, 150, 90, 0.5));
+}
+
+.modal-content p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #eee;
+}
+
+.modal-btn {
+    background: var(--gold);
+    color: black;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    width: 100%;
+}
+    </style>
+</head>
+<body>
+
+    <div id="contact-loader">
+        <div class="loader-icon"><i class="fas fa-paper-plane"></i></div>
+        <p style="margin-top: 20px; color: var(--gold); letter-spacing: 3px; font-weight: bold; font-size: 0.6rem;">AUDRY NEL AGENCY</p>
+    </div>
+
+    <header>
+        <a href="index.html" class="back-btn">← Retour Dashboard</a>
+        <h1>Get In Touch</h1>
+    </header>
+
+    <div class="contact-container">
+        
+        <div class="glass-card">
+            <h2 style="font-size: 0.8rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 25px; text-transform: uppercase;">Direct Contact</h2>
+            
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div><h4>Studio Location</h4><p>Gitega, Burundi</p></div>
+            </div>
+            
+            <div class="info-item">
+                <i class="fas fa-phone-alt"></i>
+                <div><h4>Call or SMS</h4><p>+257 62 652 177</p></div>
+            </div>
+
+            <div class="social-grid">
+                <a href="https://wa.me/25762652177" class="social-link" style="border-color: #25D36644;"><i class="fab fa-whatsapp" style="color:#25D366"></i> WhatsApp</a>
+                <a href="https://www.instagram.com/audry_nel" class="social-link" style="border-color: #E1306C44;"><i class="fab fa-instagram" style="color:#E1306C"></i> Instagram</a>
+                <a href="https://www.facebook.com/Audrynel257" class="social-link" style="border-color: #1877F244;"><i class="fab fa-facebook-f" style="color:#1877F2"></i> Facebook</a>
+                <a href="https://youtube.com/@audrynel" class="social-link" style="border-color: #FF000044;"><i class="fab fa-youtube" style="color:#FF0000"></i> YouTube</a>
+            </div>
+        </div>
+
+        <div class="glass-card contact-form">
+            <h2>Envoyer un message</h2>
+            <form id="whatsappForm">
+                <div class="input-group">
+                    <input type="text" id="userName" placeholder="Izina ryawe (Nom)" required>
+                </div>
+                <div class="input-group">
+                    <textarea id="userMessage" rows="4" placeholder="Andika ubutumwa bwawe hano..." required></textarea>
+                </div>
+                <button type="button" onclick="sendWhatsApp()" class="submit-btn">Send Message↓</button>
+            </form>
+        </div>
+
+    </div>
+    <div id="custom-alert" class="glass-modal">
+    <div class="modal-content">
+        <i class="fas fa-exclamation-circle gold-icon"></i>
+        <p id="alert-message">Mutubabarire,Uzuza,Amazina,Nubutumwa!Murakoze!</p>
+        <button onclick="closeAlert()" class="modal-btn">OK</button>
+    </div>
+</div>
+
+    <footer><p>&copy; 2026 Audry Nel Photography — Professional Excellence</p></footer>
+<script>
+    // 1. Function yo kwerekana Glass Alert
+    function showAlert(msg) {
+        const modal = document.getElementById('custom-alert');
+        const alertMsg = document.getElementById('alert-message');
+        
+        if (modal && alertMsg) {
+            alertMsg.textContent = msg;
+            modal.style.display = 'flex';
+        } else {
+            // Niba unibagiwe gushira HTML hasi, koresha alert isanzwe ngo bitarwara
+            alert(msg);
+        }
+    }
+
+    // 2. Function yo gufunga Glass Alert
+    function closeAlert() {
+        const modal = document.getElementById('custom-alert');
+        if (modal) {
+            modal.style.display = 'none';
+        }
+    }
+
+    // 3. Function yo kohereza ubutumwa kuri WhatsApp
+    function sendWhatsApp() {
+        const nameInput = document.getElementById('userName');
+        const messageInput = document.getElementById('userMessage');
+
+        const name = nameInput ? nameInput.value.trim() : "";
+        const message = messageInput ? messageInput.value.trim() : "";
+
+        // Guhindura Alert isanzwe mo Glass Alert nshya
+        if(name === "" || message === "") {
+            showAlert("Mutubabarire, mwibagiwe kuzuza amazina cyangwa ubutumwa!");
+            return;
+        }
+
+        const phone = "25762652177";
+        
+        // Format message for WhatsApp neza
+        const finalMsg = "Bonjour Audry Nel!%0A%0A" + 
+                       "*Client:* " + encodeURIComponent(name) + "%0A" + 
+                       "*Message:* " + encodeURIComponent(message) + "%0A%0A" +
+                       "_Envoyé via le site officiel._";
+
+        const waUrl = "https://wa.me/" + phone + "?text=" + finalMsg;
+        
+        // Gufungura WhatsApp
+        window.open(waUrl, '_blank');
+    }
+</script>
+
+</body>
+</html>
