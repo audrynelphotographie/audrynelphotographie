@@ -2,7 +2,7 @@
    CONSTANTS
    ============================================================ */
 const isAvailable = true;
-const APK_URL = "https://github.com/audrynel/audrynelphotographie/releases/download/V1/AudryNel.apk";
+const APK_URL = "https://www.mediafire.com/file/jpjjmx1kz5rlmv4/Audrynelphotographie.apk/file";
 const CALENDAR_URL = "https://calendar.google.com/calendar/htmlembed?src=audrymukamurakoze@gmail.com&ctz=Africa/Bujumbura";
 
 let currentClient = null;
@@ -132,7 +132,7 @@ function loadDashboard(client, isRefresh = false) {
       <div class="abonnement-expired-box">
         <div class="aeb-icon">🔒</div>
         <div class="aeb-body">
-          <div class="aeb-title">Abonnement Yawe warangiye</div>
+          <div class="aeb-title">Abonnement Yawe yarangiye</div>
           <div class="aeb-sub">Amafoto ntushobora kuyatelecharja.<br>Gura abonnrment kugira ngo ugire access yuzuye.</div>
           <button class="aeb-btn" onclick="showPage('galerie')">🛒 Gura Abonnement Nshya</button>
         </div>
