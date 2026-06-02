@@ -1,6 +1,6 @@
 const CLIENTS = [
   {
-    name: "BIVUGIRE Login",
+    name: "BIVUGIRE Longin",
     code: "2026",
     plan: "Premium",
     expiry: "2026-6-10",
