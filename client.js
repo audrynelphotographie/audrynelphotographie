@@ -321,7 +321,7 @@ const CLIENTS = [
   {
     name: "Audry Nel",
     code: "audry1",
-    plan: "Premium",
+    plan: "Free",
     expiry: "2026-12-31",
     photos: [
       "https://i.ibb.co/zh979Y8P/21.jpg",
@@ -340,7 +340,7 @@ const CLIENTS = [
     name: "Wilson",
     code: "2026",
     plan: "Free",
-    expiry: "2026-6-31",
+    expiry: "2026-04-23",
     photos: [
   "https://i.ibb.co/BHW42Lt9/IMG-0002.jpg",
   "https://i.ibb.co/BVNqgtJM/IMG-0001.jpg",
