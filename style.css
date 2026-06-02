@@ -37,16 +37,13 @@ body::before {
 }
 
 /* ============================================================
-   NAV
-   ============================================================ */
-/* ============================================================
    NAV (ULTRA MINIMALIST - UBUREBURE BUKE, AMAJAMBO ABONEKA)
    ============================================================ */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 4%; /* Padding nshya nkoranyamuryango */
+  padding: 0 3%; /* Ikigero cyagabanutse gato ngo bijyane n'uburebure */
   background: rgba(8,8,8,0.98);
   position: sticky;
   top: 0;
@@ -54,7 +51,7 @@ nav {
   border-bottom: 1px solid rgba(255,0,127,0.15);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  height: 32px; /* Uburebure bwagabanutse buja kuri 32px gusa */
+  height: 26px; /* Uburebure bwagabanutse bwavuye kuri 32px bujya kuri 26px */
 }
 
 .logo-wrapper { 
@@ -67,37 +64,37 @@ nav {
 
 .logo {
   font-family: 'Playfair Display', serif;
-  font-size: 0.95rem; /* Inyandiko nshya iboneka neza */
-  font-weight: 800; /* Umubyimba ukomeye ngo rishashe */
+  font-size: 0.8rem; /* Yagabanutse biva kuri 0.95rem */
+  font-weight: 800; 
   color: var(--accent);
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px; /* Umwanya w'inyandiko wagabanutse gato */
   transition: 0.8s cubic-bezier(0.4,0,0.2,1);
-  text-shadow: 0 0 10px rgba(255,0,127,0.4);
+  text-shadow: 0 0 8px rgba(255,0,127,0.4);
 }
 
 .nav-right { 
   display: flex; 
   align-items: center; 
-  gap: 12px; /* Umwanya ungana neza */
+  gap: 8px; /* Umwanya hagati ya tabs n'imbuga nkoranyambaga wagabanutse (12px -> 8px) */
   flex-wrap: nowrap; 
 }
 
 .nav-tabs { 
   display: flex; 
-  gap: 4px; 
+  gap: 3px; /* Umwanya hagati ya buto wagabanutse (4px -> 3px) */
 }
 
 .nav-tab {
   background: transparent;
-  color: #ffffff; /* Umweru ukeye cyane ngo uboneke */
+  color: #ffffff; 
   border: 1px solid #333;
-  padding: 1px 9px; /* Buto ziciriritse ariko ndende kuruhande */
+  padding: 0px 6px; /* Buto zashyizwe ku gipimo gito cyane (1px 9px -> 0px 6px) */
   border-radius: 50px;
-  font-size: 0.62rem; /* Inyandiko yongerewe ubunini ngo isomeke */
-  font-weight: 800; /* Umubyimba ukomeye */
+  font-size: 0.55rem; /* Inyandiko yagabanutseho gato (0.62rem -> 0.55rem) */
+  font-weight: 800; 
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   cursor: pointer;
   transition: 0.3s;
   white-space: nowrap;
@@ -107,7 +104,7 @@ nav {
   border-color: var(--accent);
   color: var(--accent) !important;
   background: rgba(255,0,127,0.08);
-  box-shadow: 0 0 8px rgba(255,0,127,0.2);
+  box-shadow: 0 0 6px rgba(255,0,127,0.2);
 }
 .nav-tab.active { background: rgba(255,0,127,0.15); }
 
@@ -116,11 +113,11 @@ nav {
    ============================================================ */
 .nav-socials { 
   display: flex; 
-  gap: 10px; 
+  gap: 6px; /* Umwanya hagati y'ibirango wagabanutse (10px -> 6px) */
 }
 
 .nav-socials a { 
-  font-size: 0.85rem; /* Ingano iguma iboneka neza */
+  font-size: 0.75rem; /* Ingano y'ibirango (icons) yagabanutse (0.85rem -> 0.75rem) */
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
   display: flex;
   align-items: center;
@@ -132,38 +129,37 @@ nav {
 .nav-socials a[href*="wa.me"], 
 .nav-socials a[href*="whatsapp"] {
   color: #25D366 !important;
-  filter: drop-shadow(0 0 5px #25D366) drop-shadow(0 0 10px #25D366);
+  filter: drop-shadow(0 0 4px #25D366) drop-shadow(0 0 8px #25D366);
 }
 
 /* 2. Instagram Glow (Pink/Red Neon) */
 .nav-socials a[href*="instagram"] {
   color: #E1306C !important;
-  filter: drop-shadow(0 0 5px #E1306C) drop-shadow(0 0 10px #E1306C);
+  filter: drop-shadow(0 0 4px #E1306C) drop-shadow(0 0 8px #E1306C);
 }
 
 /* 3. YouTube Glow (Red Neon) */
 .nav-socials a[href*="youtube"] {
   color: #FF0000 !important;
-  filter: drop-shadow(0 0 5px #FF0000) drop-shadow(0 0 10px #FF0000);
+  filter: drop-shadow(0 0 4px #FF0000) drop-shadow(0 0 8px #FF0000);
 }
 
 /* 4. Facebook Glow (Blue Neon) */
 .nav-socials a[href*="facebook"] {
   color: #1877F2 !important;
-  filter: drop-shadow(0 0 5px #1877F2) drop-shadow(0 0 10px #1877F2);
+  filter: drop-shadow(0 0 4px #1877F2) drop-shadow(0 0 8px #1877F2);
 }
 
 /* Iyo ukozeho (Hover Anim/Glow Boost) */
 .nav-socials a:hover { 
-  transform: scale(1.25) translateY(-1px);
-  filter: brightness(1.3) drop-shadow(0 0 8px currentColor) drop-shadow(0 0 15px currentColor) !important;
+  transform: scale(1.2) translateY(-1px);
+  filter: brightness(1.3) drop-shadow(0 0 6px currentColor) drop-shadow(0 0 12px currentColor) !important;
 }
 
 /* Kuri Telephone - Kugira ngo bigume muli layout nziza */
 @media (max-width: 600px) {
   .nav-socials a {
     font-size: 0.8rem;
-    /* Gabanya glow gato kuri mobile cyane bishashe */
     filter: drop-shadow(0 0 3px currentColor) drop-shadow(0 0 6px currentColor);
   }
 }
@@ -174,7 +170,7 @@ nav {
   border: 1px solid rgba(255,0,127,0.4);
   padding: 1px 6px;
   border-radius: 50px;
-  font-size: 0.62rem; /* Iboneka neza */
+  font-size: 0.62rem;
   cursor: pointer;
   outline: none;
   font-weight: 800;
@@ -184,7 +180,7 @@ nav {
 @media (max-width: 600px) {
   nav {
     padding: 0 3%;
-    height: 28px; /* Ntoya gose kuri mobile */
+    height: 28px;
   }
   .logo {
     font-size: 0.88rem;
@@ -192,16 +188,17 @@ nav {
   }
   .nav-tab {
     padding: 1px 6px;
-    font-size: 0.58rem; /* Inyandiko iguma iboneka neza kuri mobile */
+    font-size: 0.58rem;
   }
   .nav-socials a {
-    font-size: 0.8rem; /* Utu icone tuguma tuboneka neza */
+    font-size: 0.8rem;
   }
   #langSwitcher {
     font-size: 0.58rem;
     padding: 1px 5px;
   }
 }
+
 /* ============================================================
    PAGE SECTIONS
    ============================================================ */
@@ -360,7 +357,6 @@ nav {
   letter-spacing: 0.1em;
 }
 
-/* Link to tarif/payment from login card */
 .client-link-btn {
   display: inline-block;
   font-family: 'Jost', sans-serif;
@@ -574,7 +570,6 @@ nav {
 .t-photo-btn.view-btn { background: rgba(255,255,255,0.18); color: var(--t-cream); }
 .t-photo-btn.view-btn:hover { background: rgba(255,255,255,0.28); }
 
-/* Download bar */
 #dl-progress-wrap {
   position: fixed; top: 0; left: 0;
   width: 100%; height: 4px;
@@ -588,7 +583,6 @@ nav {
   transition: width 0.4s ease;
 }
 
-/* Circle loader */
 .circle-overlay {
   display: none; position: fixed; inset: 0;
   background: rgba(0,0,0,0.7); z-index: 9000;
@@ -596,7 +590,6 @@ nav {
 }
 .circle-wrapper { position: relative; }
 
-/* T Modal */
 .t-modal-overlay {
   display: none; position: fixed; inset: 0;
   background: rgba(0,0,0,0.88); z-index: 200;
@@ -649,7 +642,6 @@ nav {
 }
 .t-modal-dl-btn:hover { opacity: 0.85; }
 
-/* Notification */
 .notification {
   position: fixed; bottom: 2rem; right: 2rem;
   background: rgba(196,150,90,0.95);
@@ -690,7 +682,7 @@ nav {
 }
 .whatsapp-booking { text-align: center; margin: 20px auto 10px; }
 
-./* ============================================================
+/* ============================================================
    QUICK ACCESS (QA GRID) - HORIZONTAL ROW ALWAYS ON MOBILE
    ============================================================ */
 .quick-access {
@@ -708,28 +700,26 @@ nav {
     text-transform: uppercase;
 }
 
-/* Aka ni gakaze k’inyuma gahatira amakarita gutonda ku murongo */
 .qa-grid {
     display: flex !important;
-    flex-direction: row !important; /* Birinda amakarita kujya hasi */
+    flex-direction: row !important;
     justify-content: space-between !important;
-    align-items: stretch !important; /* Byose biba bifite uburebure bungana */
-    gap: 8px !important; /* Umwanya ungana neza hagati yazo */
-    flex-wrap: nowrap !important; /* Ikumira ikarita iyo ari yo yose kuza hasi */
-    overflow-x: hidden !important; /* Gukuramo guhindura cyangwa izunguruka kuruhande */
+    align-items: stretch !important;
+    gap: 8px !important;
+    flex-wrap: nowrap !important;
+    overflow-x: hidden !important;
     width: 100% !important;
 }
 
-/* 1. Uburyo bw'udukaze (The iPhone Glass Look) */
 .qa-card {
-    flex: 1 !important; /* Amakarita yose aguma afite ubugari bungana neza */
-    min-width: 0 !important; /* Ibi bituma ikarita idasunika izindi kuruhande */
+    flex: 1 !important;
+    min-width: 0 !important;
     background: rgba(255, 255, 255, 0.03) !important;
     backdrop-filter: blur(25px) saturate(160%) !important;
     -webkit-backdrop-filter: blur(25px) saturate(160%);
     border: 1px solid rgba(196, 150, 90, 0.12) !important;
-    border-radius: 16px !important; /* Imfuruka zoroshye neza kuri mobile */
-    padding: 15px 4px !important; /* Uburebure bwagabanutse bukeye kuri mobile */
+    border-radius: 16px !important;
+    padding: 15px 4px !important;
     text-align: center;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -743,7 +733,6 @@ nav {
     overflow: hidden;
 }
 
-/* 2. Iyo umukiriya akozeho (Hover/Tap Effect & Neon Glow) */
 .qa-card:hover {
     background: rgba(196, 150, 90, 0.08) !important;
     border-color: rgba(196, 150, 90, 0.4) !important;
@@ -751,15 +740,13 @@ nav {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(196, 150, 90, 0.1);
 }
 
-/* Icons cyangwa emoji ziri muri cards */
 .qa-card .qa-icon, .qa-card i, .qa-card img {
-    font-size: 1.4rem !important; /* Ingano buringaniye kuri mobile */
+    font-size: 1.4rem !important;
     margin-bottom: 8px !important;
     filter: drop-shadow(0 0 8px rgba(196, 150, 90, 0.3));
     transition: 0.3s ease;
 }
 
-/* WhatsApp Green Glow Nyakuri */
 .qa-grid a[href*="wa.me"], 
 .qa-grid a[href*="whatsapp"],
 .qa-card:nth-child(3) i {
@@ -767,29 +754,27 @@ nav {
     filter: drop-shadow(0 0 10px rgba(37, 211, 102, 0.5)) !important;
 }
 
-/* 3. Inyandiko ziri muri cards */
 .qa-title {
-    font-size: 0.68rem !important; /* Ntoya isomeka neza ku murongo umwe */
-    font-weight: 800 !important; /* Umubyimba ukomeye ngo rishashe */
+    font-size: 0.68rem !important;
+    font-weight: 800 !important;
     margin-bottom: 4px !important;
     color: #f3d0a0 !important;
     letter-spacing: 0.5px !important;
-    white-space: nowrap !important; /* Ihatira amagambo kutaza hasi */
+    white-space: nowrap !important;
 }
 
 .qa-sub {
-    font-size: 0.48rem !important; /* Inyandiko ntoya cyane ishashe */
+    font-size: 0.48rem !important;
     color: #666 !important;
     margin: 0 !important;
     line-height: 1.2 !important;
-    white-space: nowrap !important; /* Kuramo kwigabura nabi */
+    white-space: nowrap !important;
 }
 
 .qa-arrow { 
-    display: none !important; /* Kuramo utwambi kuri mobile ngo byuzure neza */
+    display: none !important;
 }
 
-/* KURI PC (COMPUTER) GUSA - Subiza muli grid isanzwe */
 @media (min-width: 600px) {
     .qa-grid {
         display: grid !important;
@@ -820,7 +805,6 @@ nav {
   animation: pulse-animation 3s infinite;
 }
 
-/* Loading state */
 .btn-loading { position: relative; pointer-events: none; color: transparent !important; }
 .btn-loading::after {
   content: "\f030"; font-family: "Font Awesome 6 Free"; font-weight: 900;
@@ -1012,7 +996,7 @@ footer {
   border-top: 1px solid #111; position: relative; z-index: 1;
 }
 
-/* Responsive */
+/* Responsive Breakpoints */
 @media (max-width: 600px) {
   .brand-name { font-size: 2rem; }
   .dash-header { padding: 0.8rem 1rem; }
@@ -1027,10 +1011,10 @@ footer {
   .pricing-grid { width: 95%; gap: 15px; grid-template-columns: 1fr; }
   .pricing-container { width: 95%; gap: 14px; grid-template-columns: repeat(2, 1fr); }
 }
-/* Ibi bituma Header yo muri Dashboard ija hejuru neza */
+
 .dash-header {
     display: flex;
-    justify-content: space-between; /* Izina rya studio ibumuso, Avatar/Logout iburyo */
+    justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
     background: rgba(13, 11, 11, 0.98);
@@ -1053,7 +1037,6 @@ footer {
     gap: 12px;
 }
 
-/* Buto ya Logout iba itonze neza */
 .btn-logout {
     font-size: 0.65rem;
     border: 1px solid #444;
@@ -1067,7 +1050,6 @@ footer {
     margin-top: 10px;
 }
 
-/* Premium Glow */
 .premium-badge {
     display: inline-block;
     padding: 6px 15px;
@@ -1083,7 +1065,6 @@ footer {
     animation: premium-pulse 2s infinite;
 }
 
-/* Expired/Free Glow */
 .expired-badge {
     display: inline-block;
     padding: 6px 15px;
@@ -1103,7 +1084,6 @@ footer {
     100% { transform: scale(1); box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); }
 }
 
-/* ── Expire Soon Badge — glow orange ── */
 .abonnement-soon-box {
   display: inline-flex;
   align-items: center;
@@ -1141,7 +1121,6 @@ footer {
   50%      { opacity: 0.15; }
 }
 
-/* ── Abonnement Expired — boite CTA ── */
 .abonnement-expired-box {
   display: flex;
   align-items: flex-start;
@@ -1202,7 +1181,7 @@ footer {
   .aeb-icon { font-size: 1.4rem; }
 }
 .btn-back-dash {
-    background: rgba(196, 150, 90, 0.05); /* Gold tint */
+    background: rgba(196, 150, 90, 0.05);
     border: 1px solid rgba(196, 150, 90, 0.3);
     color: #c4a882;
     padding: 12px 20px;
@@ -1221,9 +1200,10 @@ footer {
 .btn-back-dash:hover {
     background: rgba(196, 150, 90, 0.15);
     border-color: #c4965a;
-    transform: translateX(-5px); /* Akantu kerekana gusubira inyuma */
+    transform: translateX(-5px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
+
 /* 1. UNIVERSAL BACKGROUND (Smooth Deep Noir & Gold Glow) */
 html, body {
     margin: 0;
@@ -1231,7 +1211,7 @@ html, body {
     width: 100%;
     min-height: 100vh;
     background: radial-gradient(circle at 50% -20%, #1a150e 0%, #050505 100%) !important;
-    background-attachment: fixed !important; /* Ibi bituma background itanyeganyega na busa */
+    background-attachment: fixed !important;
     color: #ffffff;
     font-family: 'Jost', sans-serif;
     overflow-x: hidden;
@@ -1239,18 +1219,18 @@ html, body {
 
 /* 2. FULL GLASS SYSTEM (Kugira ngo byose bise nk'ibiratwa) */
 .login-card, .qa-card, .card, .pricing-card, .stat-box, .dash-header, .page-section, .modal-content, .btn-back-dash {
-    background: rgba(255, 255, 255, 0.02) !important; /* Transparent cyane */
-    backdrop-filter: blur(30px) saturate(180%) !important; /* Blur ikaze nka iPhone */
+    background: rgba(255, 255, 255, 0.02) !important;
+    backdrop-filter: blur(30px) saturate(180%) !important;
     -webkit-backdrop-filter: blur(30px) saturate(180%);
-    border: 1px solid rgba(196, 150, 90, 0.1) !important; /* Border y'izahabu itagaragara cyane */
-    border-radius: 25px; /* Imfuruka zoroshye cyane */
+    border: 1px solid rgba(196, 150, 90, 0.1) !important;
+    border-radius: 25px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 /* 3. GUKURAHO BYOSE BITANDUKANYA (Seamless Look) */
 #login-view, #dashboard-view, #page-galerie, .page-section, footer, nav {
-    background: transparent !important; /* Bituma background imwe igaragara hose */
+    background: transparent !important;
     border: none !important;
     box-shadow: none !important;
 }
@@ -1263,12 +1243,11 @@ html, body {
     filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.2));
 }
 
-/* 5. SMOOTH SCROLLING (Kugira ngo binyerere en grand) */
+/* 5. SMOOTH SCROLLING */
 html {
     scroll-behavior: smooth;
 }
 
-/* Kuraho kwayangana (Tap highlight) kuri mobile */
 * {
     -webkit-tap-highlight-color: transparent;
 }
@@ -1279,7 +1258,7 @@ html {
     border: 1px solid rgba(196, 150, 90, 0.3) !important;
     color: #f3d0a0 !important;
     padding: 12px 24px;
-    border-radius: 50px; /* Round shape nka iPhone buttons */
+    border-radius: 50px;
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -1295,44 +1274,42 @@ html {
 .btn-glass-back:hover {
     background: rgba(196, 150, 90, 0.2) !important;
     border-color: #c4965a !important;
-    transform: translateX(-5px); /* Akantu k'inyerera (Smooth slide) */
+    transform: translateX(-5px);
     box-shadow: 0 0 20px rgba(196, 150, 90, 0.2);
 }
 
 .btn-glass-back i {
     font-size: 0.9rem;
 }
-/* Ibi bituma logo ijyamo hagati hejuru */
 .login-logo-container {
     display: flex;
     justify-content: center;
-    margin-bottom: -10px; /* Ibi bituma yinjira gato mu gakaze */
-    margin-top: -40px;    /* Ibi bituma ijya hejuru y'umurongo w'agakaze */
+    margin-bottom: -10px;
+    margin-top: -40px;
 }
 
 .login-logo-circle {
-    width: 90px;  /* Urashobora kuyongera niba ushaka ko iba nini gato */
+    width: 90px;
     height: 90px;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border: 2px solid rgba(196, 150, 90, 0.5); /* Border ikomeye gato */
+    border: 2px solid rgba(196, 150, 90, 0.5);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(196, 150, 90, 0.2);
-    overflow: hidden; /* Ibi nibyo bituma ifoto itarenga uruziga */
+    overflow: hidden;
     z-index: 10;
 }
 
 .login-logo-circle img {
-    width: 100%;    /* Ifoto yuzura ubugari bwose */
-    height: 100%;   /* Ifoto yuzura uburebure bwose */
-    object-fit: cover; /* Ibi nibyo bituma ifoto ikwira neza (Cover) nta kuyikurura nabi */
-    object-position: center; /* Bituma hagati heza h’ifoto ari ho hagaragara */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
-/* 1. Buto isanzwe ifite akantu k'umucyo (Default Glow) */
 .btn-t-login {
     position: relative;
     overflow: hidden;
@@ -1346,11 +1323,10 @@ html {
     z-index: 1;
 }
 
-/* 2. Glow Animation igihe umuntu apfonze buto (Loading State) */
 .btn-t-login:disabled {
     background: #111 !important;
     color: #c4965a !important;
-    opacity: 1 !important; /* Tugumane umucyo */
+    opacity: 1 !important;
     box-shadow: 0 0 25px rgba(196, 150, 90, 0.6);
     animation: gold-pulse 1.5s infinite;
 }
@@ -1361,7 +1337,6 @@ html {
     100% { box-shadow: 0 0 10px rgba(196, 150, 90, 0.4); }
 }
 
-/* 3. Spinner y'izahabu (Gold Spinner) */
 .mini-loader {
     width: 20px;
     height: 20px;
@@ -1371,7 +1346,7 @@ html {
     display: inline-block;
     margin-left: 12px;
     vertical-align: middle;
-    filter: drop-shadow(0 0 5px #d4af37); /* Glow kuri spinner */
+    filter: drop-shadow(0 0 5px #d4af37);
     animation: spin 0.8s linear infinite;
 }
 
@@ -1381,7 +1356,7 @@ html {
 }
 .btn-t-login {
     position: relative;
-    overflow: hidden; /* Ibi bituma ya shine itarenga buto */
+    overflow: hidden;
     background: linear-gradient(135deg, #c4965a 0%, #8e6d43 100%) !important;
     color: #000 !important;
     font-weight: 800;
@@ -1392,11 +1367,9 @@ html {
     box-shadow: 0 0 15px rgba(196, 150, 90, 0.4);
     cursor: pointer;
     transition: all 0.3s ease;
-    /* Animation yo gutuma buto ibyimba buhoro (Pulse) */
     animation: constant-glow 2.5s infinite ease-in-out;
 }
 
-/* 2. AKA KANTU KANNYERERA (The Shine Effect) */
 .btn-t-login::after {
     content: '';
     position: absolute;
@@ -1411,13 +1384,9 @@ html {
         rgba(255, 255, 255, 0) 100%
     );
     transform: rotate(30deg);
-    /* Animation ituma itara rinyerera hejuru ya buto buri masegonda 3 */
     animation: shiny-slide 3s infinite;
 }
 
-/* --- ANIMATIONS --- */
-
-/* Ibi bituma buto yinyeganyeza ikurura amaso */
 @keyframes constant-glow {
     0%, 100% { 
         transform: scale(1); 
@@ -1429,13 +1398,11 @@ html {
     }
 }
 
-/* Ibi bituma itara ry'umweru rinyerera (Shine) */
 @keyframes shiny-slide {
     0% { left: -60%; }
     20% { left: 120%; }
     100% { left: 120%; }
 }
-/* 1. Uburyo bw'udukaze (The iPhone Glass Look) */
 .qa-card {
     background: rgba(255, 255, 255, 0.03) !important;
     backdrop-filter: blur(25px) saturate(160%) !important;
@@ -1453,7 +1420,6 @@ html {
     justify-content: center;
 }
 
-/* 2. Iyo umukiriya akozeho (Hover/Tap Effect) */
 .qa-card:hover {
     background: rgba(196, 150, 90, 0.08) !important;
     border-color: rgba(196, 150, 90, 0.4) !important;
@@ -1461,7 +1427,6 @@ html {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(196, 150, 90, 0.1);
 }
 
-/* 3. Icons ziri muri cards */
 .qa-card i, .qa-card img {
     font-size: 2rem;
     margin-bottom: 15px;
@@ -1469,7 +1434,6 @@ html {
     transition: 0.3s ease;
 }
 
-/* 4. Inyandiko ziri muri cards */
 .qa-card h3 {
     font-size: 0.9rem;
     font-weight: 700;
@@ -1484,42 +1448,35 @@ html {
     margin: 0;
     line-height: 1.4;
 }
-/* WhatsApp Green Glow */
 .qa-card:nth-child(3) i {
     color: #25d366 !important;
     filter: drop-shadow(0 0 10px rgba(37, 211, 102, 0.4));
 }
-/* --- FOOTER INFINITE SLOW SCROLL --- */
 
 .footer-photo-strip {
     width: 100%;
-    overflow: hidden; /* Ibi bituma nta scrollbar igaragara */
+    overflow: hidden;
     padding: 20px 0;
     position: relative;
     background: transparent;
 }
 
-/* 2. Aka nibo gakaze k'imbere (The Engine) */
 .footer-photo-strip-inner {
     display: flex;
     gap: 20px;
-    width: max-content; /* Ibi nibyo bituma umurongo uba muremure cyane */
-    /* 60s ituma binyerera buke buke cyane, linear ikabuza kudidira */
+    width: max-content;
     animation: slowInfiniteScroll 60s linear infinite; 
 }
 
-/* Animation ituma binyerera adategwa */
 @keyframes slowInfiniteScroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* Igera hagati neza kuko amafoto asubiramo */
+    100% { transform: translateX(-50%); }
 }
 
-/* Pause igihe umukiriya ayikozeko (Touch/Hover) */
 .footer-photo-strip:hover .footer-photo-strip-inner {
     animation-play-state: paused;
 }
 
-/* 3. Agakaze k'ifoto (Glass Card Style) */
 .footer-photo-item {
     width: 160px;
     height: 160px;
@@ -1540,18 +1497,16 @@ html {
     object-fit: cover;
     opacity: 0.9;
 }
-/* Styling ya Buto Nshya ya Home muri Dashboard */
-/* --- DASHBOARD STATS LAYOUT --- */
 
 .dash-stats {
     display: flex;
-    justify-content: space-between; /* Bituma hagati yabyo hasigara akanya karinganiye */
+    justify-content: space-between;
     gap: 12px;
     margin: 25px 15px;
 }
 
 .stat-box {
-    flex: 1; /* Ibi bituma byose biba bifite ubugari bungana (Width) */
+    flex: 1;
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
@@ -1567,7 +1522,6 @@ html {
     justify-content: center;
 }
 
-/* Icons & Numbers */
 .stat-num {
     font-size: 1.3rem;
     font-weight: 800;
@@ -1582,20 +1536,17 @@ html {
     text-transform: uppercase;
 }
 
-/* Hover Effects */
 .stat-box:hover {
     transform: translateY(-5px);
     border-color: #c4965a;
     background: rgba(196, 150, 90, 0.05);
 }
 
-/* Home Button Glow */
 .home-icon-glow {
     color: #d4af37;
     filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.5));
 }
 
-/* Download All Button */
 .download-all-btn {
     background: rgba(196, 150, 90, 0.08);
 }
@@ -1604,7 +1555,6 @@ html {
     color: #c4965a;
 }
 
-/* Selected Button (Iyo yaje) */
 .selected-btn {
     background: #c4965a !important;
     border: none !important;
@@ -1613,20 +1563,16 @@ html {
 .selected-btn .stat-label {
     color: #000 !important;
 }
+
 /* ============================================================
-   KURI TELEPHONE GUSA: SCALE SITE TO 95% & KEEP IT CENTRED
+   KURI TELEPHONE YOSE: RESPONSIVE SCALING NZIZA (100% FIXED)
+   - Ibisiga ipaji yose hagati neza (Centered) kuri screen zose
    ============================================================ */
 @media (max-width: 600px) {
   html {
-    /* Gabanya urubuga rwose kuri 95% gusa kuri mobile */
-    transform: scale(0.95) !important;
-    transform-origin: top center !important;
-    
-    /* Kuringaniza ubugari bwa screen ngo byuzure neza (100 / 0.95) */
-    width: 100.26% !important;
-    height: 105.26%;
-    
-    /* Gukuramo zoom n'izunguruka kuruhande */
+    transform: scale(1.0); /* Subijwe kuri 100% isanzwe ngo itanyita */
+    transform-origin: top center;
+    width: 100%;
     overflow-x: hidden !important;
     touch-action: pan-y !important;
   }
@@ -1635,16 +1581,13 @@ html {
     overflow-x: hidden !important;
     width: 100% !important;
     -webkit-text-size-adjust: 100%;
-    
-    /* Gufata ibice byose bikaguma rwagati (centre) */
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
+    align-items: center !important; /* Ibi bituma isite iza HAGATI (Center) */
     justify-content: flex-start !important;
     margin: 0 auto !important;
   }
 
-  /* Kuringaniza nav na footer ngo bikwire hagati muli 95% */
   nav, footer, main, section, .container {
     width: 100% !important;
     max-width: 100% !important;
@@ -1654,6 +1597,28 @@ html {
     margin-right: auto !important;
   }
 }
+
+@media (max-width: 390px) {
+  html {
+    transform: scale(1.0);
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  html {
+    transform: scale(1.0);
+    width: 100%;
+  }
+}
+
+@media (max-width: 320px) {
+  html {
+    transform: scale(1.0);
+    width: 100%;
+  }
+}
+
 /* ============================================================
    TABLET BREAKPOINT (768px)
    ============================================================ */
@@ -1674,17 +1639,16 @@ html {
   position: fixed; 
   top: 0; 
   left: 0; 
-  width: 100vw !important; /* Ikoresha ubugari bwose bwa ecran */
-  height: 100vh !important; /* Ikoresha uburebure bwose bwa ecran */
-  background: #ffffff !important; /* Hitamo umweru cyangwa umwiza bikwiranye na Google Cal */
-  z-index: 99999 !important; /* Kugira ngo ije hejuru y'ibintu byose */
-  overflow: hidden !important; /* Kuraho gu-scroll ku ruziga rw'inyuma */
+  width: 100vw !important;
+  height: 100vh !important;
+  background: #ffffff !important;
+  z-index: 99999 !important;
+  overflow: hidden !important;
 }
 
-/* Agakaze k'imbere gafashe Iframe */
 .cal-frame-container {
   width: 100% !important;
-  height: calc(100vh - 50px) !important; /* Igabanyaho uburebure bwa Header gusa */
+  height: calc(100vh - 50px) !important;
   margin: 0 !important;
   padding: 0 !important;
   border: none !important;
@@ -1696,10 +1660,9 @@ html {
   border: none !important;
 }
 
-/* Header ya Calendar (Aho buto yo gufunga iri) */
 .cal-header {
   height: 50px;
-  background: #080808 !important; /* Isubiramo mu ibara rya Noir y'urubuga rwawe */
+  background: #080808 !important;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1708,17 +1671,13 @@ html {
 }
 
 .close-cal {
-  position: static !important; /* Kuraho guhindura nabi */
+  position: static !important;
   font-size: 1.8rem !important;
   color: var(--accent) !important;
   cursor: pointer;
 }
 
-/* ============================================================
-   KUBIKOSORA KURI MOBILE (GUKURAHO TRANSFORMATION INYITSA)
-   ============================================================ */
 @media (max-width: 600px) {
-  /* Ibi bice bituma iyo calendar ifunguye, itanyitswa na ya scale ya 95% */
   html:has(#calendar-overlay[style*="display: block"]),
   html:has(#calendar-overlay[style*="display: flex"]) {
     transform: none !important;
@@ -1726,7 +1685,6 @@ html {
     height: 100% !important;
   }
 }
-Mwi code nguhaye confirm date yisubizemwo ucusubiz code nguhaye
 
 /* ============================================================
    EXPIRED BLOCK MODAL
