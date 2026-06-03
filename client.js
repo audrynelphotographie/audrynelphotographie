@@ -339,8 +339,8 @@ const CLIENTS = [
   {
     name: "Wilson",
     code: "2026",
-    plan: "Free",
-    expiry: "2026-04-23",
+    plan: "Premium",
+    expiry: "2026-06-10",
     photos: [
   "https://i.ibb.co/BHW42Lt9/IMG-0002.jpg",
   "https://i.ibb.co/BVNqgtJM/IMG-0001.jpg",
