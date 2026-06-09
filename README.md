@@ -1,4 +1,4 @@
-# Audry Nel | Acces To Your Privated Galeries
+# Audry Nel
 Professional Photographer & Best photographer in Burundi.
 
 📸 **Portfolio:** [Visit Website](https://audrynel.com/)
