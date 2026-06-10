@@ -1909,3 +1909,223 @@ html {
   letter-spacing: 1px;
   font-weight: 700;
 }
+/* ============================================================
+   DASHBOARD — RESPONSIVE COMPLETE (MOBILE ≤ 600px)
+   Kugira ngo client yinjiye abone dashboard neza nk'i desktop
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+  /* ── Header wa dashboard ── */
+  .dash-header {
+    padding: 10px 4% !important;
+    top: 0 !important;
+    gap: 8px;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .dash-brand {
+    font-size: 1rem !important;
+    white-space: nowrap;
+  }
+
+  .dash-user {
+    gap: 8px;
+  }
+
+  .dash-avatar {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 0.6rem !important;
+  }
+
+  .dash-username {
+    display: none !important;
+  }
+
+  .btn-logout {
+    padding: 5px 10px !important;
+    font-size: 0.58rem !important;
+    white-space: nowrap;
+  }
+
+  /* ── Welcome section ── */
+  .dash-welcome {
+    padding: 1.2rem 1rem 0.8rem !important;
+  }
+
+  .welcome-tag {
+    font-size: 0.55rem !important;
+    letter-spacing: 0.25em;
+  }
+
+  .welcome-name {
+    font-size: 1.6rem !important;
+    line-height: 1.2;
+  }
+
+  .client-code-badge {
+    font-size: 0.55rem !important;
+    padding: 0.22rem 0.6rem !important;
+    margin-top: 0.5rem;
+  }
+
+  /* ── Badge abonnement ── */
+  #status-badge-container {
+    margin-top: 6px;
+  }
+
+  .premium-badge {
+    font-size: 0.58rem !important;
+    padding: 5px 12px !important;
+    letter-spacing: 0.5px;
+  }
+
+  .expired-badge {
+    font-size: 0.58rem !important;
+    padding: 5px 12px !important;
+  }
+
+  .abonnement-expired-box {
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding: 14px 14px !important;
+    border-radius: 10px !important;
+    margin: 0 0 8px !important;
+  }
+
+  .aeb-icon { font-size: 1.3rem !important; }
+
+  .aeb-title {
+    font-size: 0.72rem !important;
+    margin-bottom: 4px;
+  }
+
+  .aeb-sub {
+    font-size: 0.65rem !important;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .aeb-btn {
+    font-size: 0.65rem !important;
+    padding: 7px 14px !important;
+  }
+
+  .abonnement-soon-box {
+    font-size: 0.62rem !important;
+    padding: 7px 14px !important;
+  }
+
+  /* ── Stat boxes (3 boutons: Home / ALL / Selected) ── */
+  .dash-stats {
+    margin: 12px 10px !important;
+    gap: 8px !important;
+    display: flex !important;
+    flex-direction: row !important;
+  }
+
+  .stat-box {
+    padding: 12px 4px !important;
+    border-radius: 14px !important;
+    flex: 1;
+  }
+
+  .stat-num {
+    font-size: 1.1rem !important;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 0.45rem !important;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+  }
+
+  /* ── Gallery section ── */
+  .gallery-section {
+    padding: 0 8px 2rem !important;
+  }
+
+  .section-header {
+    margin: 1rem 0 0.8rem !important;
+  }
+
+  .section-title {
+    font-size: 0.95rem !important;
+  }
+
+  .section-count {
+    font-size: 0.55rem !important;
+  }
+
+  /* ── Photo grid: 4 colonnes ── */
+  .t-photo-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 2px !important;
+  }
+
+  /* ── Overlay buttons sur les photos ── */
+  .t-photo-overlay {
+    padding: 4px 3px !important;
+    gap: 2px !important;
+  }
+
+  .t-photo-btn {
+    font-size: 0.45rem !important;
+    padding: 2px 0 !important;
+  }
+
+  /* Checkbox selection */
+  .photo-checkbox {
+    width: 12px !important;
+    height: 12px !important;
+  }
+}
+
+/* ── iPhone SE et très petits écrans (< 380px) ── */
+@media (max-width: 380px) {
+  .welcome-name {
+    font-size: 1.4rem !important;
+  }
+
+  .dash-brand {
+    font-size: 0.88rem !important;
+  }
+
+  .dash-stats {
+    gap: 6px !important;
+    margin: 10px 8px !important;
+  }
+
+  .stat-box {
+    padding: 10px 2px !important;
+  }
+
+  .stat-num {
+    font-size: 0.95rem !important;
+  }
+
+  .stat-label {
+    font-size: 0.40rem !important;
+  }
+
+  /* 3 colonnes sur très petits écrans */
+  .t-photo-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2px !important;
+  }
+
+  .t-photo-btn {
+    font-size: 0.40rem !important;
+  }
+}
+
+/* ── Kuri mobile: dash-header ntiba sticky (nav irimo haruguru) ── */
+@media (max-width: 600px) {
+  .dash-header {
+    position: relative !important;
+    top: auto !important;
+  }
+   }
