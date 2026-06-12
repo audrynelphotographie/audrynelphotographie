@@ -182,18 +182,32 @@ function loadDashboard(client, isRefresh = false) {
       div.className = 't-photo-item';
       const photoTitle = `Photo_${i + 1}`;
 
+      // Iyo yarangiye: areba gusa ariko ntamanura
+      // Iyo expired: voir isubizwa kuri modal ya block, download nayo
       const viewAction     = isExpired ? `showExpiredModal()` : `openModal(${i})`;
+      
+      // AHAKURIKIRA HAHINDUTSE: Uhita uhamagara doSingleDownload directly hatabaye popup ya Ask
       const downloadAction = canDownload
         ? `doSingleDownload('${photoUrl}','${photoTitle}')`
         : `showExpiredModal()`;
+        
       const downloadLabel  = canDownload ? '↓ DL' : '🔒';
       const dlBg    = canDownload ? '#c4965a' : isExpired ? 'rgba(120,30,30,0.9)' : 'rgba(60,40,40,0.9)';
       const dlColor = canDownload ? '#0d0b0b' : '#cc6666';
 
-      // Skeleton shimmer igaragara mbere y'ifoto
       div.innerHTML = `
-        <div class="photo-skeleton"></div>
-        <img data-src="${photoUrl}" alt="${photoTitle}" class="lazy-img">
+        <div class="photo-skeleton">
+          <div class="camera-loader">
+            <div class="cam-body">
+              <div class="cam-lens">
+                <div class="cam-lens-inner"></div>
+              </div>
+              <div class="cam-flash"></div>
+            </div>
+            <div class="cam-shutter"></div>
+          </div>
+        </div>
+        <img class="lazy-img" data-src="${photoUrl}" alt="${photoTitle}">
         ${canDownload ? `<input type="checkbox" class="photo-checkbox" value="${photoUrl}" data-title="${photoTitle}" onchange="updateSelection()" style="position:absolute;top:5px;left:5px;z-index:10;width:14px;height:14px;accent-color:#c4965a;">` : ''}
         <div class="t-photo-overlay">
           <button class="t-photo-btn view-btn" onclick="${viewAction}">👁 Voir</button>
@@ -203,33 +217,34 @@ function loadDashboard(client, isRefresh = false) {
         </div>`;
       grid.appendChild(div);
     });
-
-    // IntersectionObserver: ifoto igerurwa gusa iyo igaragara ku screen
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const img = entry.target;
-        const src = img.getAttribute('data-src');
-        if (!src) return;
-        img.src = src;
-        img.removeAttribute('data-src');
-        img.onload = () => {
-          img.classList.add('loaded');
-          const skeleton = img.previousElementSibling;
-          if (skeleton && skeleton.classList.contains('photo-skeleton')) {
-            skeleton.style.opacity = '0';
-            setTimeout(() => skeleton.remove(), 300);
-          }
-        };
-        img.onerror = () => {
-          img.classList.add('loaded');
-        };
-        observer.unobserve(img);
-      });
-    }, { rootMargin: '200px 0px' });
-
-    grid.querySelectorAll('.lazy-img').forEach(img => observer.observe(img));
   }
+
+  // ── Lazy loading na IntersectionObserver ─────────────────
+  const lazyImgs = grid.querySelectorAll('.lazy-img');
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const img = entry.target;
+      const skeleton = img.previousElementSibling;
+      img.src = img.dataset.src;
+      img.onload = () => {
+        img.classList.add('loaded');
+        if (skeleton && skeleton.classList.contains('photo-skeleton')) {
+          skeleton.style.opacity = '0';
+          setTimeout(() => skeleton.remove(), 350);
+        }
+      };
+      img.onerror = () => {
+        if (skeleton && skeleton.classList.contains('photo-skeleton')) {
+          skeleton.style.opacity = '0';
+          setTimeout(() => skeleton.remove(), 350);
+        }
+      };
+      obs.unobserve(img);
+    });
+  }, { rootMargin: '80px', threshold: 0.05 });
+
+  lazyImgs.forEach(img => observer.observe(img));
 
   document.getElementById('login-view').style.display = 'none';
   document.getElementById('dashboard-view').style.display = 'block';
@@ -265,7 +280,10 @@ function doLogin() {
   // 2. Tegereza amasegonda abiri (2000ms)
   setTimeout(() => {
     const db = typeof CLIENTS !== 'undefined' ? CLIENTS : [];
-    const found = db.find(c => c.name.toLowerCase().includes(name) && c.code === code);
+    const found = db.find(c =>
+      c.name.trim().toLowerCase() === name &&
+      c.code.trim() === code.trim()
+    );
 
     if (!found) {
       err.textContent = 'Nom ou code incorrect. Veuillez réessayer.';
@@ -391,44 +409,34 @@ function canClientDownload() {
 
 /* ── Download umwe + progress 0→100 ── */
 async function doSingleDownload(url, title) {
+  // Progress igaragara vuba
   showSingleProgress(title);
-  const filename = title.replace(/\s/g, '_') + '.jpg';
 
-  const tryFetch = async (fetchUrl) => {
-    const res = await fetch(fetchUrl);
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    return await res.blob();
-  };
+  try {
+    const res  = await fetch(url);
+    const blob = await res.blob();
 
-  const saveBlob = (blob) => {
+    // Animate 0 → 100%
+    await animateSingleProgress(0, 100, 600);
+
     const blobUrl = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.style.display = 'none';
     a.href = blobUrl;
-    a.download = filename;
+    a.download = title.replace(/\s/g, '_') + '.jpg';
     document.body.appendChild(a);
     a.click();
     URL.revokeObjectURL(blobUrl);
     document.body.removeChild(a);
-  };
-
-  try {
-    // Gerageza 1: fetch direct
-    let blob;
-    try {
-      blob = await tryFetch(url);
-    } catch {
-      // Gerageza 2: CORS proxy (allorigins)
-      const proxy = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(url);
-      blob = await tryFetch(proxy);
-    }
-    await animateSingleProgress(0, 100, 600);
-    saveBlob(blob);
   } catch {
-    // Fallback yanyuma: fungura ifoto muri tab nshya
-    await animateSingleProgress(0, 100, 400);
-    window.open(url, '_blank');
-    showNotif('📥 Fungura ifoto, ugaragaze iranguruye, uhitemo "Bika ifoto"');
+    // AHAKURIKIRA HAHINDUTSE: Igihe fetch igize ikibazo, ukoresha invisible link mu kureba ko yijana mwi fone directement aho gufungura tab nshya ya window.open
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = title.replace(/\s/g, '_') + '.jpg';
+    a.target = '_self'; 
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
   } finally {
     setTimeout(hideSingleProgress, 1200);
   }
